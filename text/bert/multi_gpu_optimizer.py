@@ -17,9 +17,9 @@
 Copied from https://github.com/JayYip/bert-multitask-learning/blob/master/bert_multitask_learning/optimizer.py
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import re
 import tensorflow as tf

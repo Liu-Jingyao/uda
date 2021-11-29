@@ -14,9 +14,9 @@
 # limitations under the License.
 """Preprocessing for text classifications."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import copy
 import json
@@ -266,7 +266,7 @@ def convert_examples_to_features(
       # st = " ".join([str(x) for x in tokens])
       st = ""
       for x in tokens:
-        if isinstance(x, unicode):
+        if isinstance(x, str):
           st += x.encode("ascii", "replace") + " "
         else:
           st += str(x) + " "

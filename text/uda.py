@@ -14,9 +14,9 @@
 # limitations under the License.
 """Code for using the labeled examples and unlabeled examples in unsupervised data augmentation."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import collections
 import re

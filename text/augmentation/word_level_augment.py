@@ -15,9 +15,9 @@
 """Word level augmentations including Replace words with uniform random words or TF-IDF based word replacement.
 """
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import collections
 import copy
@@ -101,7 +101,7 @@ class UnifRep(EfficientRandomGen):
 
   def reset_token_list(self):
     """Generate many random tokens at the same time and cache them."""
-    self.token_list = self.vocab.keys()
+    self.token_list = list(self.vocab.keys())
     self.token_ptr = len(self.token_list) - 1
     np.random.shuffle(self.token_list)
 
@@ -149,7 +149,7 @@ class TfIdfWordRep(EfficientRandomGen):
     self.idf = data_stats["idf"]
     self.tf_idf = data_stats["tf_idf"]
     data_stats = copy.deepcopy(data_stats)
-    tf_idf_items = data_stats["tf_idf"].items()
+    tf_idf_items = list(data_stats["tf_idf"].items())
     tf_idf_items = sorted(tf_idf_items, key=lambda item: -item[1])
     self.tf_idf_keys = []
     self.tf_idf_values = []

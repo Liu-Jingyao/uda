@@ -14,9 +14,9 @@
 # limitations under the License.
 """Tokenization classes."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import codecs
 import collections
@@ -267,7 +267,7 @@ def _convert_to_unicode_or_throw(text):
   """Converts `text` to Unicode (if it's not already), assuming utf-8 input."""
   if isinstance(text, str):
     text = text.decode("utf-8", "ignore")
-  if not isinstance(text, unicode):
+  if not isinstance(text, str):
     raise ValueError("`text` must be of type `unicode` or `str`, but is "
                      "actually of type: %s" % (type(text).__name__))
   return text
@@ -288,7 +288,7 @@ def printable_text(text):
   elif six.PY2:
     if isinstance(text, str):
       return text
-    elif isinstance(text, unicode):
+    elif isinstance(text, str):
       return text.encode("utf-8")
     else:
       raise ValueError("Unsupported string type: %s" % (type(text)))

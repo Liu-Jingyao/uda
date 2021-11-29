@@ -14,9 +14,9 @@
 # limitations under the License.
 """Runner for UDA that uses BERT."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import json
 import os
@@ -288,7 +288,7 @@ def main(_):
       tf.logging.info("*** Running evaluation ***")
       dev_result = estimator.evaluate(input_fn=eval_input_fn, steps=eval_steps)
       tf.logging.info(">> Results:")
-      for key in dev_result.keys():
+      for key in list(dev_result.keys()):
         tf.logging.info("  %s = %s", key, str(dev_result[key]))
         dev_result[key] = dev_result[key].item()
       best_acc = max(best_acc, dev_result["eval_classify_accuracy"])
@@ -320,7 +320,7 @@ def main(_):
           checkpoint_path=ckpt_path,
       )
       tf.logging.info(">> Results:")
-      for key in dev_result.keys():
+      for key in list(dev_result.keys()):
         tf.logging.info("  %s = %s", key, str(dev_result[key]))
         dev_result[key] = dev_result[key].item()
       best_acc = max(best_acc, dev_result["eval_classify_accuracy"])
