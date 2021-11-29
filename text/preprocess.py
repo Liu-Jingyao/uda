@@ -267,7 +267,7 @@ def convert_examples_to_features(
       st = ""
       for x in tokens:
         if isinstance(x, str):
-          st += x.encode("ascii", "replace") + " "
+          st += x + " "
         else:
           st += str(x) + " "
       tf.logging.info("tokens: %s" % st)
