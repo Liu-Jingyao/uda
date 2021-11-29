@@ -180,7 +180,7 @@ def main(_):
   label_list = processor.get_labels()
 
   bert_config = modeling.BertConfig.from_json_file(
-      FLAGS.bert_config_file,
+      "/content/uda/text/pretrained_models/bert_base/bert_config.json",
       FLAGS.model_dropout)
 
 
