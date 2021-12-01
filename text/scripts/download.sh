@@ -25,14 +25,16 @@ cd ..
 
 # download bert large ft
 cd pretrained_models
-wget https://storage.googleapis.com/uda_model/text/imdb_bert_ft.zip
+# wget https://storage.googleapis.com/uda_model/text/imdb_bert_ft.zip
+wget -c https://d7.serctl.com/downloads4/2020-12-04-17-08-09-uda_model-imdb_bert_ft.zip -O ./imdb_bert_ft.zip
 unzip imdb_bert_ft.zip && rm imdb_bert_ft.zip
 cd ..
 
 # **** download back translated data ****
 mkdir -p data/back_translation
 cd data/back_translation
-wget https://storage.googleapis.com/uda_model/text/imdb_back_trans.zip
+# wget https://storage.googleapis.com/uda_model/text/imdb_back_trans.zip
+wget -c https://d7.serctl.com/downloads8/2021-07-09-16-04-34--imdb_back_trans.zip -O ./imdb_back_trans.zip
 unzip imdb_back_trans.zip && rm imdb_back_trans.zip
 cd ../../
 
